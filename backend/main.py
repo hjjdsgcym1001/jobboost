@@ -268,6 +268,11 @@ async def result_page():
 async def templates_page():
     return render("templates.html")
 
+
+@app.get("/template-result", response_class=HTMLResponse)
+async def template_result_page():
+    return render("template_result.html")
+
 @app.get("/interview", response_class=HTMLResponse)
 async def interview_page():
     return render("interview.html")
