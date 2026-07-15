@@ -1,5 +1,38 @@
 {% extends "base.html" %}
-{% block title %}简历模板{% endblock %}
+{% block title %}简历模板
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const resumeText = sessionStorage.getItem("jobboost_resume_text");
+    document.querySelectorAll(".template-btn").forEach(function(btn) {
+        btn.onclick = function() {
+            const templateId = this.dataset.template;
+            const templateName = this.dataset.name;
+            if (!resumeText) {
+                window.location.href = "/#upload";
+                return;
+            }
+            this.disabled = true;
+            this.textContent = "生成中...";
+            fetch("/api/resume/template", {
+                method: "POST",
+                headers: {"Content-Type": "application/json"},
+                body: JSON.stringify({resume_text: resumeText, template_id: templateId})
+            }).then(function(r) { return r.json(); }).then(function(data) {
+                if (data.formatted) {
+                    sessionStorage.setItem("jobboost_formatted", data.formatted);
+                    sessionStorage.setItem("jobboost_template_name", templateName);
+                    window.location.href = "/template-result";
+                }
+            })["catch"](function() {
+                this.textContent = "使用此模板";
+                this.disabled = false;
+            });
+        };
+    });
+});
+</script>
+
+{% endblock %}
 {% block content %}
 <section class="py-12">
     <div class="max-w-6xl mx-auto px-4">
@@ -37,7 +70,7 @@
                         <span class="px-2 py-0.5 bg-gray-100 text-gray-600 text-xs rounded">两栏布局</span>
                         <span class="px-2 py-0.5 bg-gray-100 text-gray-600 text-xs rounded">ATS 友好</span>
                     </div>
-                    <button class="w-full py-2.5 bg-primary-500 text-white rounded-xl hover:bg-primary-600 transition text-sm font-medium">使用此模板</button>
+                    <button class="template-btn w-full py-2.5 bg-primary-500 text-white rounded-xl hover:bg-primary-600 transition text-sm font-medium" data-template="tech" data-name="简洁技术型">使用此模板</button>
                 </div>
             </div>
 
@@ -63,7 +96,7 @@
                         <span class="px-2 py-0.5 bg-gray-100 text-gray-600 text-xs rounded">时间线</span>
                         <span class="px-2 py-0.5 bg-gray-100 text-gray-600 text-xs rounded">量化成果</span>
                     </div>
-                    <button class="w-full py-2.5 bg-primary-500 text-white rounded-xl hover:bg-primary-600 transition text-sm font-medium">使用此模板</button>
+                    <button class="template-btn w-full py-2.5 bg-primary-500 text-white rounded-xl hover:bg-primary-600 transition text-sm font-medium" data-template="tech" data-name="简洁技术型">使用此模板</button>
                 </div>
             </div>
 
@@ -89,7 +122,7 @@
                         <span class="px-2 py-0.5 bg-gray-100 text-gray-600 text-xs rounded">STAR 法则</span>
                         <span class="px-2 py-0.5 bg-gray-100 text-gray-600 text-xs rounded">开源项目</span>
                     </div>
-                    <button class="w-full py-2.5 bg-primary-500 text-white rounded-xl hover:bg-primary-600 transition text-sm font-medium">使用此模板</button>
+                    <button class="template-btn w-full py-2.5 bg-primary-500 text-white rounded-xl hover:bg-primary-600 transition text-sm font-medium" data-template="intern" data-name="实习强化型">使用此模板</button>
                 </div>
             </div>
 
@@ -114,7 +147,7 @@
                         <span class="px-2 py-0.5 bg-gray-100 text-gray-600 text-xs rounded">一页</span>
                         <span class="px-2 py-0.5 bg-gray-100 text-gray-600 text-xs rounded">均衡</span>
                     </div>
-                    <button class="w-full py-2.5 bg-primary-500 text-white rounded-xl hover:bg-primary-600 transition text-sm font-medium">使用此模板</button>
+                    <button class="template-btn w-full py-2.5 bg-primary-500 text-white rounded-xl hover:bg-primary-600 transition text-sm font-medium" data-template="project" data-name="项目突出型">使用此模板</button>
                 </div>
             </div>
 
@@ -140,7 +173,7 @@
                         <span class="px-2 py-0.5 bg-gray-100 text-gray-600 text-xs rounded">数据驱动</span>
                         <span class="px-2 py-0.5 bg-gray-100 text-gray-600 text-xs rounded">视觉</span>
                     </div>
-                    <button class="w-full py-2.5 bg-primary-500 text-white rounded-xl hover:bg-primary-600 transition text-sm font-medium">使用此模板</button>
+                    <button class="template-btn w-full py-2.5 bg-primary-500 text-white rounded-xl hover:bg-primary-600 transition text-sm font-medium" data-template="general" data-name="综合标准型">使用此模板</button>
                 </div>
             </div>
 
@@ -166,7 +199,7 @@
                         <span class="px-2 py-0.5 bg-gray-100 text-gray-600 text-xs rounded">论文列表</span>
                         <span class="px-2 py-0.5 bg-gray-100 text-gray-600 text-xs rounded">算法</span>
                     </div>
-                    <button class="w-full py-2.5 bg-primary-500 text-white rounded-xl hover:bg-primary-600 transition text-sm font-medium">使用此模板</button>
+                    <button class="template-btn w-full py-2.5 bg-primary-500 text-white rounded-xl hover:bg-primary-600 transition text-sm font-medium" data-template="product" data-name="产品运营型">使用此模板</button>
                 </div>
             </div>
         </div>
@@ -182,4 +215,37 @@
         </div>
     </div>
 </section>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const resumeText = sessionStorage.getItem("jobboost_resume_text");
+    document.querySelectorAll(".template-btn").forEach(function(btn) {
+        btn.onclick = function() {
+            const templateId = this.dataset.template;
+            const templateName = this.dataset.name;
+            if (!resumeText) {
+                window.location.href = "/#upload";
+                return;
+            }
+            this.disabled = true;
+            this.textContent = "生成中...";
+            fetch("/api/resume/template", {
+                method: "POST",
+                headers: {"Content-Type": "application/json"},
+                body: JSON.stringify({resume_text: resumeText, template_id: templateId})
+            }).then(function(r) { return r.json(); }).then(function(data) {
+                if (data.formatted) {
+                    sessionStorage.setItem("jobboost_formatted", data.formatted);
+                    sessionStorage.setItem("jobboost_template_name", templateName);
+                    window.location.href = "/template-result";
+                }
+            })["catch"](function() {
+                this.textContent = "使用此模板";
+                this.disabled = false;
+            });
+        };
+    });
+});
+</script>
+
 {% endblock %}

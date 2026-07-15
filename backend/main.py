@@ -17,6 +17,7 @@ from fastapi.responses import HTMLResponse, JSONResponse, FileResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
+from typing import Optional
 from dotenv import load_dotenv
 
 # Load .env file
@@ -225,6 +226,24 @@ async def get_session(session_id: str):
         "is_complete": session["current_index"] >= len(session["questions"]),
     }
 
+
+
+
+class TemplateRequest(BaseModel):
+    resume_text: str
+    template_id: str
+
+@app.post("/api/resume/template")
+async def apply_template(req: TemplateRequest):
+    """按模板类型格式化简历"""
+    try:
+        result = ai_service.format_resume_for_template(
+            resume_text=req.resume_text,
+            template_id=req.template_id,
+        )
+        return {"formatted": result}
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
 
 # ─── Routes: Pages (for non-SPA clients) ───
 

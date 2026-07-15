@@ -224,6 +224,22 @@ class AIService:
         result = self._call_llm(system_prompt, user_prompt, temperature=0.3)
         return self._parse_json_result(result)
 
+
+    TEMPLATE_PROMPTS = {
+        "tech": "简洁技术型：突出技术栈和项目，采用两栏布局，左侧技能栏+右侧经历栏。重点展示编程语言、框架、工具链和量化成果。",
+        "intern": "实习强化型：以时间线组织实习经历为主，每个经历包含公司、岗位、时间、职责和量化成果。突出实习贡献和成长。",
+        "project": "项目突出型：把重点项目放在简历主体位置，使用STAR法则描述每个项目。适合项目经验丰富的候选人。",
+        "general": "综合标准型：经典一页简历结构，教育背景、实习/工作经历、项目、技能四大模块均衡分布，适合大多数岗位。",
+        "product": "产品运营型：突出数据分析、用户增长、活动策划等能力，使用数据驱动的表述方式，适合产品经理/运营岗位。",
+        "research": "学术研究型：突出论文、专利和研究项目，包含完整的论文列表和引用信息，适合硕士/博士/研究岗位。",
+    }
+
+    def format_resume_for_template(self, resume_text, template_id):
+        template_desc = self.TEMPLATE_PROMPTS.get(template_id, self.TEMPLATE_PROMPTS["general"])
+        system_prompt = f"你是一名资深简历排版专家。请根据以下模板风格重新排版简历内容。\n\n模板风格：{template_desc}\n\n要求：\n1. 保留所有原始信息，不虚构内容\n2. 按照模板风格重新组织段落顺序和排版\n3. 对已有的经历进行STAR法则优化\n4. 使用量化的表述方式\n5. 保持专业简洁的语言风格\n6. 输出纯文本格式"
+        user_prompt = f"请按模板风格格式化以下简历：\n\n{resume_text}"
+        return self._call_llm(system_prompt, user_prompt, temperature=0.4)
+
     # ──────────────── Helpers ────────────────
 
     def _parse_json_result(self, text: str) -> dict:

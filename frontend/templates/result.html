@@ -116,6 +116,31 @@
 </section>
 {% endblock %}
 {% block scripts %}
+
+<script>
+function applyTemplate(tid, tname) {
+    var text = sessionStorage.getItem("jobboost_resume_text") || sessionStorage.getItem("jobboost_analysis");
+    if (!text) { alert("请先上传简历"); return; }
+    // Parse the analysis to get raw text
+    try {
+        var data = JSON.parse(sessionStorage.getItem("jobboost_analysis"));
+        if (data && data.raw_text) {
+            sessionStorage.setItem("jobboost_resume_text", data.raw_text);
+        }
+    } catch(e) {}
+    fetch("/api/resume/template", {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify({resume_text: sessionStorage.getItem("jobboost_resume_text") || text, template_id: tid})
+    }).then(function(r){return r.json()}).then(function(data){
+        if(data.formatted){
+            sessionStorage.setItem("jobboost_formatted", data.formatted);
+            sessionStorage.setItem("jobboost_template_name", tname);
+            window.location.href = "/template-result";
+        }
+    });
+}
+</script>
 <script>
     // Store analysis data in sessionStorage
     document.addEventListener('DOMContentLoaded', function() {
