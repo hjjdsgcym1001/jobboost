@@ -1,1 +1,1 @@
-{"deploy":{"healthcheckPath":"/api/health","restartPolicyType":"ON_FAILURE"}}
+{"build":{"builder":"DOCKERFILE"},"deploy":{"healthcheckPath":"/api/health","restartPolicyType":"ON_FAILURE"}}
