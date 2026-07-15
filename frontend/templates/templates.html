@@ -1,0 +1,185 @@
+﻿{% extends "base.html" %}
+{% block title %}简历模板{% endblock %}
+{% block content %}
+<section class="py-12">
+    <div class="max-w-6xl mx-auto px-4">
+        <div class="text-center mb-12">
+            <h1 class="text-4xl font-bold mb-4">应届生简历模板</h1>
+            <p class="text-gray-500 text-lg max-w-2xl mx-auto">针对秋招优化，覆盖技术、产品、运营等岗位。选一个模板，上传简历自动套用。</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Template 1: 简洁技术型 -->
+            <div class="bg-white rounded-2xl border border-gray-200 overflow-hidden hover:shadow-lg transition group">
+                <div class="h-48 bg-gradient-to-br from-slate-50 to-slate-100 p-6 flex items-center justify-center border-b border-gray-100">
+                    <div class="w-full h-full bg-white rounded-lg shadow-sm p-4 text-xs">
+                        <div class="flex items-center space-x-2 mb-3">
+                            <div class="w-6 h-6 bg-primary-500 rounded-full"></div>
+                            <div><div class="h-2 w-16 bg-gray-200 rounded"></div><div class="h-2 w-12 bg-gray-100 rounded mt-1"></div></div>
+                        </div>
+                        <div class="h-2 w-3/4 bg-gray-200 rounded mb-2"></div>
+                        <div class="h-2 w-1/2 bg-gray-100 rounded mb-1"></div>
+                        <div class="h-2 w-2/3 bg-gray-100 rounded mb-3"></div>
+                        <div class="flex space-x-1 mb-3"><span class="h-4 w-8 bg-primary-100 rounded"></span><span class="h-4 w-10 bg-primary-100 rounded"></span><span class="h-4 w-6 bg-primary-100 rounded"></span></div>
+                        <div class="h-2 w-full bg-gray-200 rounded mb-1"></div>
+                        <div class="h-2 w-5/6 bg-gray-100 rounded mb-1"></div>
+                        <div class="h-2 w-4/6 bg-gray-100 rounded"></div>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <div class="flex items-center justify-between mb-2">
+                        <h3 class="font-semibold text-lg">简洁技术型</h3>
+                        <span class="px-2 py-0.5 bg-green-100 text-green-600 text-xs rounded-full font-medium">热门</span>
+                    </div>
+                    <p class="text-sm text-gray-500 mb-3">干净利落，突出技术栈和项目经历，适合后端/前端/算法岗位</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="px-2 py-0.5 bg-gray-100 text-gray-600 text-xs rounded">技术岗</span>
+                        <span class="px-2 py-0.5 bg-gray-100 text-gray-600 text-xs rounded">两栏布局</span>
+                        <span class="px-2 py-0.5 bg-gray-100 text-gray-600 text-xs rounded">ATS 友好</span>
+                    </div>
+                    <button class="w-full py-2.5 bg-primary-500 text-white rounded-xl hover:bg-primary-600 transition text-sm font-medium">使用此模板</button>
+                </div>
+            </div>
+
+            <!-- Template 2: 实习强化型 -->
+            <div class="bg-white rounded-2xl border border-gray-200 overflow-hidden hover:shadow-lg transition">
+                <div class="h-48 bg-gradient-to-br from-blue-50 to-indigo-100 p-6 flex items-center justify-center border-b border-gray-100">
+                    <div class="w-full h-full bg-white rounded-lg shadow-sm p-4 text-xs">
+                        <div class="h-2 w-1/2 bg-gray-200 rounded mb-3 mx-auto"></div>
+                        <div class="space-y-2 mb-3">
+                            <div class="flex space-x-2"><div class="w-1 h-8 bg-blue-300 rounded"></div><div class="flex-1"><div class="h-2 w-3/4 bg-gray-200 rounded mb-1"></div><div class="h-2 w-full bg-gray-100 rounded mb-1"></div><div class="h-2 w-5/6 bg-gray-100 rounded"></div></div></div>
+                            <div class="flex space-x-2"><div class="w-1 h-8 bg-blue-300 rounded"></div><div class="flex-1"><div class="h-2 w-3/4 bg-gray-200 rounded mb-1"></div><div class="h-2 w-full bg-gray-100 rounded mb-1"></div><div class="h-2 w-5/6 bg-gray-100 rounded"></div></div></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <div class="flex items-center justify-between mb-2">
+                        <h3 class="font-semibold text-lg">实习强化型</h3>
+                        <span class="px-2 py-0.5 bg-blue-100 text-blue-600 text-xs rounded-full font-medium">应届生</span>
+                    </div>
+                    <p class="text-sm text-gray-500 mb-3">突出实习经历和项目成果，适合有 1-2 段实习的应届生</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="px-2 py-0.5 bg-gray-100 text-gray-600 text-xs rounded">实习经历</span>
+                        <span class="px-2 py-0.5 bg-gray-100 text-gray-600 text-xs rounded">时间线</span>
+                        <span class="px-2 py-0.5 bg-gray-100 text-gray-600 text-xs rounded">量化成果</span>
+                    </div>
+                    <button class="w-full py-2.5 bg-primary-500 text-white rounded-xl hover:bg-primary-600 transition text-sm font-medium">使用此模板</button>
+                </div>
+            </div>
+
+            <!-- Template 3: 项目突出型 -->
+            <div class="bg-white rounded-2xl border border-gray-200 overflow-hidden hover:shadow-lg transition">
+                <div class="h-48 bg-gradient-to-br from-emerald-50 to-teal-100 p-6 flex items-center justify-center border-b border-gray-100">
+                    <div class="w-full h-full bg-white rounded-lg shadow-sm p-4 text-xs">
+                        <div class="h-2 w-1/3 bg-gray-200 rounded mb-3"></div>
+                        <div class="space-y-2">
+                            <div><div class="h-2 w-full bg-emerald-200 rounded mb-1"></div><div class="h-2 w-5/6 bg-gray-100 rounded mb-1"></div><div class="h-2 w-4/6 bg-gray-100 rounded"></div></div>
+                            <div><div class="h-2 w-full bg-emerald-200 rounded mb-1"></div><div class="h-2 w-5/6 bg-gray-100 rounded mb-1"></div><div class="h-2 w-4/6 bg-gray-100 rounded"></div></div>
+                            <div><div class="h-2 w-full bg-emerald-200 rounded mb-1"></div><div class="h-2 w-5/6 bg-gray-100 rounded mb-1"></div><div class="h-2 w-4/6 bg-gray-100 rounded"></div></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <div class="flex items-center justify-between mb-2">
+                        <h3 class="font-semibold text-lg">项目突出型</h3>
+                    </div>
+                    <p class="text-sm text-gray-500 mb-3">把重点项目放在首位，用 STAR 法则组织内文，适合项目经验丰富的同学</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="px-2 py-0.5 bg-gray-100 text-gray-600 text-xs rounded">项目展示</span>
+                        <span class="px-2 py-0.5 bg-gray-100 text-gray-600 text-xs rounded">STAR 法则</span>
+                        <span class="px-2 py-0.5 bg-gray-100 text-gray-600 text-xs rounded">开源项目</span>
+                    </div>
+                    <button class="w-full py-2.5 bg-primary-500 text-white rounded-xl hover:bg-primary-600 transition text-sm font-medium">使用此模板</button>
+                </div>
+            </div>
+
+            <!-- Template 4: 综合标准型 -->
+            <div class="bg-white rounded-2xl border border-gray-200 overflow-hidden hover:shadow-lg transition">
+                <div class="h-48 bg-gradient-to-br from-orange-50 to-amber-100 p-6 flex items-center justify-center border-b border-gray-100">
+                    <div class="w-full h-full bg-white rounded-lg shadow-sm p-4 text-xs">
+                        <div class="h-2 w-1/2 bg-gray-200 rounded mb-3"></div>
+                        <div class="grid grid-cols-2 gap-2">
+                            <div><div class="h-2 w-full bg-gray-200 rounded mb-1"></div><div class="h-2 w-full bg-gray-100 rounded mb-1"></div><div class="h-2 w-3/4 bg-gray-100 rounded"></div></div>
+                            <div><div class="h-2 w-full bg-gray-200 rounded mb-1"></div><div class="h-2 w-full bg-gray-100 rounded mb-1"></div><div class="h-2 w-3/4 bg-gray-100 rounded"></div></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <div class="flex items-center justify-between mb-2">
+                        <h3 class="font-semibold text-lg">综合标准型</h3>
+                    </div>
+                    <p class="text-sm text-gray-500 mb-3">经典一页简历，教育/实习/项目/技能均衡分配，万金油方案</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="px-2 py-0.5 bg-gray-100 text-gray-600 text-xs rounded">通用</span>
+                        <span class="px-2 py-0.5 bg-gray-100 text-gray-600 text-xs rounded">一页</span>
+                        <span class="px-2 py-0.5 bg-gray-100 text-gray-600 text-xs rounded">均衡</span>
+                    </div>
+                    <button class="w-full py-2.5 bg-primary-500 text-white rounded-xl hover:bg-primary-600 transition text-sm font-medium">使用此模板</button>
+                </div>
+            </div>
+
+            <!-- Template 5: 产品运营型 -->
+            <div class="bg-white rounded-2xl border border-gray-200 overflow-hidden hover:shadow-lg transition">
+                <div class="h-48 bg-gradient-to-br from-purple-50 to-violet-100 p-6 flex items-center justify-center border-b border-gray-100">
+                    <div class="w-full h-full bg-white rounded-lg shadow-sm p-4 text-xs">
+                        <div class="flex items-center justify-center mb-3"><div class="w-8 h-8 bg-purple-200 rounded-full"></div></div>
+                        <div class="h-2 w-1/2 bg-gray-200 rounded mb-1 mx-auto"></div>
+                        <div class="h-2 w-1/3 bg-gray-100 rounded mb-3 mx-auto"></div>
+                        <div class="h-2 w-full bg-gray-200 rounded mb-1"></div>
+                        <div class="h-2 w-5/6 bg-gray-100 rounded mb-3"></div>
+                        <div class="flex justify-center space-x-2"><span class="h-4 w-12 bg-purple-100 rounded"></span><span class="h-4 w-10 bg-purple-100 rounded"></span></div>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <div class="flex items-center justify-between mb-2">
+                        <h3 class="font-semibold text-lg">产品运营型</h3>
+                    </div>
+                    <p class="text-sm text-gray-500 mb-3">突出数据分析和项目影响力，适合产品经理/运营/市场岗位</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="px-2 py-0.5 bg-gray-100 text-gray-600 text-xs rounded">PM/运营</span>
+                        <span class="px-2 py-0.5 bg-gray-100 text-gray-600 text-xs rounded">数据驱动</span>
+                        <span class="px-2 py-0.5 bg-gray-100 text-gray-600 text-xs rounded">视觉</span>
+                    </div>
+                    <button class="w-full py-2.5 bg-primary-500 text-white rounded-xl hover:bg-primary-600 transition text-sm font-medium">使用此模板</button>
+                </div>
+            </div>
+
+            <!-- Template 6: 学术研究型 -->
+            <div class="bg-white rounded-2xl border border-gray-200 overflow-hidden hover:shadow-lg transition">
+                <div class="h-48 bg-gradient-to-br from-rose-50 to-pink-100 p-6 flex items-center justify-center border-b border-gray-100">
+                    <div class="w-full h-full bg-white rounded-lg shadow-sm p-4 text-xs">
+                        <div class="h-2 w-1/2 bg-gray-200 rounded mb-3"></div>
+                        <div class="space-y-1 mb-2">
+                            <div class="flex justify-between"><span class="h-2 w-2/5 bg-gray-200 rounded"></span><span class="h-2 w-1/5 bg-gray-100 rounded"></span></div>
+                            <div class="flex justify-between"><span class="h-2 w-2/5 bg-gray-200 rounded"></span><span class="h-2 w-1/5 bg-gray-100 rounded"></span></div>
+                            <div class="flex justify-between"><span class="h-2 w-2/5 bg-gray-200 rounded"></span><span class="h-2 w-1/5 bg-gray-100 rounded"></span></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <div class="flex items-center justify-between mb-2">
+                        <h3 class="font-semibold text-lg">学术研究型</h3>
+                    </div>
+                    <p class="text-sm text-gray-500 mb-3">突出论文、专利和研究项目，适合硕博/研究岗/算法岗</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="px-2 py-0.5 bg-gray-100 text-gray-600 text-xs rounded">研究岗</span>
+                        <span class="px-2 py-0.5 bg-gray-100 text-gray-600 text-xs rounded">论文列表</span>
+                        <span class="px-2 py-0.5 bg-gray-100 text-gray-600 text-xs rounded">算法</span>
+                    </div>
+                    <button class="w-full py-2.5 bg-primary-500 text-white rounded-xl hover:bg-primary-600 transition text-sm font-medium">使用此模板</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- CTA -->
+        <div class="text-center mt-12 p-8 bg-gradient-to-br from-primary-50 to-accent-50 rounded-2xl border border-primary-100">
+            <h2 class="text-2xl font-bold mb-2">先分析再选模板</h2>
+            <p class="text-gray-500 mb-6">上传简历，AI 分析后会推荐最适合你的模板布局</p>
+            <a href="/#upload" class="inline-flex items-center px-8 py-3.5 bg-gradient-to-r from-primary-500 to-primary-600 text-white font-semibold rounded-xl hover:from-primary-600 hover:to-primary-700 transition shadow-lg">
+                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"/></svg>
+                上传简历开始
+            </a>
+        </div>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,107 @@
+﻿{% extends "base.html" %}
+{% block title %}定价{% endblock %}
+{% block content %}
+<section class="py-16 md:py-24">
+    <div class="max-w-6xl mx-auto px-4">
+        <div class="text-center mb-16">
+            <h1 class="text-4xl font-bold mb-4">简单透明的定价</h1>
+            <p class="text-gray-500 text-lg">选择最适合你的方案，随时升级或取消</p>
+        </div>
+
+        <!-- Monthly Plans -->
+        <h2 class="text-2xl font-bold text-center mb-8">月度方案</h2>
+        <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto mb-20">
+            <!-- Free -->
+            <div class="bg-white rounded-2xl border border-gray-200 p-8 flex flex-col hover:shadow-lg transition">
+                <h3 class="text-lg font-semibold mb-2">免费体验</h3>
+                <p class="text-gray-400 text-sm mb-4">试试 JobBoost 的效果</p>
+                <div class="text-4xl font-bold mb-6">¥0</div>
+                <ul class="space-y-3 mb-8 flex-1">
+                    <li class="flex items-center text-sm text-gray-600"><svg class="w-4 h-4 mr-2 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>1 次简历分析</li>
+                    <li class="flex items-center text-sm text-gray-600"><svg class="w-4 h-4 mr-2 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>基础优化建议</li>
+                    <li class="flex items-center text-sm text-gray-600"><svg class="w-4 h-4 mr-2 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>ATS 匹配检测</li>
+                    <li class="flex items-center text-sm text-gray-400"><svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>面试模拟</li>
+                    <li class="flex items-center text-sm text-gray-400"><svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>JD 定制分析</li>
+                </ul>
+                <a href="/" class="w-full py-3 border-2 border-primary-500 text-primary-600 rounded-xl text-center font-medium hover:bg-primary-50 transition">免费使用</a>
+            </div>
+
+            <!-- Pro Monthly -->
+            <div class="bg-white rounded-2xl border-2 border-primary-500 p-8 flex flex-col hover:shadow-xl transition relative">
+                <div class="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 bg-primary-500 text-white text-sm rounded-full font-medium">推荐</div>
+                <h3 class="text-lg font-semibold mb-2">Pro 月度</h3>
+                <p class="text-gray-400 text-sm mb-4">求职者首选方案</p>
+                <div class="text-4xl font-bold mb-2">¥19</div>
+                <p class="text-gray-400 text-sm mb-6">/ 月</p>
+                <ul class="space-y-3 mb-8 flex-1">
+                    <li class="flex items-center text-sm text-gray-600"><svg class="w-4 h-4 mr-2 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>无限简历分析</li>
+                    <li class="flex items-center text-sm text-gray-600"><svg class="w-4 h-4 mr-2 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>深度优化建议</li>
+                    <li class="flex items-center text-sm text-gray-600"><svg class="w-4 h-4 mr-2 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>面试模拟（无限次）</li>
+                    <li class="flex items-center text-sm text-gray-600"><svg class="w-4 h-4 mr-2 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>JD 定制优化</li>
+                    <li class="flex items-center text-sm text-gray-600"><svg class="w-4 h-4 mr-2 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>简历模板下载</li>
+                </ul>
+                <button class="w-full py-3 bg-gradient-to-r from-primary-500 to-primary-600 text-white rounded-xl text-center font-medium hover:from-primary-600 hover:to-primary-700 transition shadow-lg shadow-primary-200">开通 Pro</button>
+            </div>
+
+            <!-- Pro+ Monthly -->
+            <div class="bg-white rounded-2xl border border-gray-200 p-8 flex flex-col hover:shadow-lg transition">
+                <h3 class="text-lg font-semibold mb-2">Pro+ 月度</h3>
+                <p class="text-gray-400 text-sm mb-4">求职加速器</p>
+                <div class="text-4xl font-bold mb-2">¥29</div>
+                <p class="text-gray-400 text-sm mb-6">/ 月</p>
+                <ul class="space-y-3 mb-8 flex-1">
+                    <li class="flex items-center text-sm text-gray-600"><svg class="w-4 h-4 mr-2 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>全部 Pro 功能</li>
+                    <li class="flex items-center text-sm text-gray-600"><svg class="w-4 h-4 mr-2 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>无限简历版本</li>
+                    <li class="flex items-center text-sm text-gray-600"><svg class="w-4 h-4 mr-2 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>优先 AI 处理</li>
+                    <li class="flex items-center text-sm text-gray-600"><svg class="w-4 h-4 mr-2 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>自定义简历模板</li>
+                    <li class="flex items-center text-sm text-gray-600"><svg class="w-4 h-4 mr-2 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>数据分析报告</li>
+                </ul>
+                <button class="w-full py-3 border-2 border-gray-300 text-gray-700 rounded-xl text-center font-medium hover:bg-gray-50 transition">开通 Pro+</button>
+            </div>
+        </div>
+
+        <!-- Lifetime Plans - Symmetric 2-column layout -->
+        <h2 class="text-2xl font-bold text-center mb-8">终身方案 <span class="text-sm bg-green-100 text-green-600 px-3 py-1 rounded-full font-medium ml-2">一次付费，永久使用</span></h2>
+        <div class="grid md:grid-cols-2 gap-8 max-w-3xl mx-auto mb-8">
+            <!-- Lifetime Pro -->
+            <div class="bg-gradient-to-br from-primary-50 to-white rounded-2xl border-2 border-primary-400 p-8 flex flex-col hover:shadow-xl transition relative">
+                <div class="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 bg-gradient-to-r from-amber-400 to-amber-500 text-white text-sm rounded-full font-medium shadow-lg">最超值</div>
+                <h3 class="text-lg font-semibold mb-2">Pro 终身</h3>
+                <p class="text-gray-400 text-sm mb-4">永久使用全部功能</p>
+                <div class="flex items-baseline mb-2">
+                    <span class="text-4xl font-bold">¥99</span>
+                    <span class="text-gray-400 ml-2 text-sm line-through">¥228</span>
+                </div>
+                <p class="text-green-600 text-sm font-medium mb-6">省 ¥129  <span class="text-gray-400">（≈ 5 个月回本）</span></p>
+                <ul class="space-y-3 mb-8 flex-1">
+                    <li class="flex items-center text-sm text-gray-600"><svg class="w-4 h-4 mr-2 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>永久无限简历分析</li>
+                    <li class="flex items-center text-sm text-gray-600"><svg class="w-4 h-4 mr-2 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>永久无限面试模拟</li>
+                    <li class="flex items-center text-sm text-gray-600"><svg class="w-4 h-4 mr-2 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>JD 定制优化</li>
+                    <li class="flex items-center text-sm text-gray-600"><svg class="w-4 h-4 mr-2 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>简历模板下载</li>
+                    <li class="flex items-center text-sm text-gray-600"><svg class="w-4 h-4 mr-2 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>未来所有功能更新</li>
+                </ul>
+                <button class="w-full py-3 bg-gradient-to-r from-amber-400 to-orange-500 text-white rounded-xl text-center font-medium hover:from-amber-500 hover:to-orange-600 transition shadow-lg shadow-amber-200 text-lg">立即开通 ¥99</button>
+            </div>
+            <!-- Lifetime Pro+ -->
+            <div class="bg-white rounded-2xl border border-gray-200 p-8 flex flex-col hover:shadow-lg transition">
+                <h3 class="text-lg font-semibold mb-2">Pro+ 终身</h3>
+                <p class="text-gray-400 text-sm mb-4">永久顶级体验</p>
+                <div class="flex items-baseline mb-2">
+                    <span class="text-4xl font-bold">¥199</span>
+                    <span class="text-gray-400 ml-2 text-sm line-through">¥348</span>
+                </div>
+                <p class="text-green-600 text-sm font-medium mb-6">省 ¥149  <span class="text-gray-400">（≈ 7 个月回本）</span></p>
+                <ul class="space-y-3 mb-8 flex-1">
+                    <li class="flex items-center text-sm text-gray-600"><svg class="w-4 h-4 mr-2 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>全部终身 Pro 功能</li>
+                    <li class="flex items-center text-sm text-gray-600"><svg class="w-4 h-4 mr-2 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>永久优先 AI 处理</li>
+                    <li class="flex items-center text-sm text-gray-600"><svg class="w-4 h-4 mr-2 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>自定义简历模板</li>
+                    <li class="flex items-center text-sm text-gray-600"><svg class="w-4 h-4 mr-2 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>数据分析报告</li>
+                    <li class="flex items-center text-sm text-gray-600"><svg class="w-4 h-4 mr-2 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>优先客服支持</li>
+                </ul>
+                <button class="w-full py-3 border-2 border-amber-400 bg-amber-50 text-amber-700 rounded-xl text-center font-medium hover:bg-amber-100 transition">开通 ¥199</button>
+            </div>
+        </div>
+        <p class="text-center text-sm text-gray-400 mt-6">支持微信支付和支付宝。终身会员一次付费，永久有效。</p>
+    </div>
+</section>
+{% endblock %}

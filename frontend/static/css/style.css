@@ -1,0 +1,51 @@
+﻿/* JobBoost Custom Styles */
+
+/* Smooth scroll */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Better transitions */
+.transition {
+    transition-duration: 200ms;
+}
+
+/* File dropzone active state */
+#dropzone.dragover {
+    border-color: #3b82f6;
+    background-color: #eff6ff;
+}
+
+/* Scrollbar for optimized version */
+#optimized-version::-webkit-scrollbar {
+    width: 6px;
+}
+#optimized-version::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 3px;
+}
+#optimized-version::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 3px;
+}
+#optimized-version::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* Loading spinner */
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+.animate-spin {
+    animation: spin 1s linear infinite;
+}
+
+/* Pulse */
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+.animate-pulse {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
