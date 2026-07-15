@@ -114,6 +114,25 @@
         </div>
     </div>
 </section>
+
+            <!-- Template Recommendation -->
+            <div class="bg-gradient-to-br from-primary-50 to-accent-50 rounded-2xl border border-primary-100 p-6">
+                <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+                    <div>
+                        <h3 class="font-semibold text-lg mb-1">推荐模板</h3>
+                        <p class="text-gray-500 text-sm">根据你的简历内容，以下模板可能适合你：</p>
+                        <div class="flex flex-wrap gap-2 mt-3">
+                            <span class="px-4 py-2 bg-primary-100 text-primary-700 rounded-xl text-sm font-medium cursor-pointer hover:bg-primary-200 transition" onclick="applyTemplate('tech','简洁技术型')">简洁技术型</span>
+                            <span class="px-4 py-2 bg-primary-100 text-primary-700 rounded-xl text-sm font-medium cursor-pointer hover:bg-primary-200 transition" onclick="applyTemplate('intern','实习强化型')">实习强化型</span>
+                            <span class="px-4 py-2 bg-primary-100 text-primary-700 rounded-xl text-sm font-medium cursor-pointer hover:bg-primary-200 transition" onclick="applyTemplate('project','项目突出型')">项目突出型</span>
+                            <span class="px-4 py-2 bg-primary-100 text-primary-700 rounded-xl text-sm font-medium cursor-pointer hover:bg-primary-200 transition" onclick="applyTemplate('general','综合标准型')">综合标准型</span>
+                            <span class="px-4 py-2 bg-primary-100 text-primary-700 rounded-xl text-sm font-medium cursor-pointer hover:bg-primary-200 transition" onclick="applyTemplate('product','产品运营型')">产品运营型</span>
+                            <span class="px-4 py-2 bg-primary-100 text-primary-700 rounded-xl text-sm font-medium cursor-pointer hover:bg-primary-200 transition" onclick="applyTemplate('research','学术研究型')">学术研究型</span>
+                        </div>
+                    </div>
+                    <a href="/templates" class="flex-shrink-0 px-6 py-3 bg-gradient-to-r from-primary-500 to-accent-500 text-white font-semibold rounded-xl hover:from-primary-600 hover:to-accent-600 transition shadow-lg text-sm">查看所有模板 →</a>
+                </div>
+            </div>
 {% endblock %}
 {% block scripts %}
 
