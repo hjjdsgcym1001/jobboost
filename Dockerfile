@@ -2,10 +2,6 @@ FROM python:3.11-slim
 
 WORKDIR /app
 
-# Install system dependencies
-RUN apt-get update && apt-get install -y --no-install-recommends \
-    && rm -rf /var/lib/apt/lists/*
-
 # Install Python dependencies
 COPY backend/requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
@@ -13,8 +9,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copy app code
 COPY . .
 
-# Hugging Face Spaces uses port 7860
-EXPOSE 7860
+# Use PORT env var (Railway sets this automatically)
+EXPOSE 8000
 
-# Start FastAPI
-CMD ["uvicorn", "backend.main:app", "--host", "0.0.0.0", "--port", "7860"]
+CMD ["python", "run.py"]
