@@ -1,4 +1,4 @@
-﻿"""
+"""
 JobBoost Backend - FastAPI Application
 AI Resume Optimizer + Interview Assistant
 """

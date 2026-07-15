@@ -1,27 +1,3 @@
-﻿# Python
-__pycache__/
-*.py[cod]
-*.pyo
-*.egg-info/
-dist/
-build/
-
-# Environment
-.env
-backend/.env
-*.env.local
-
-# Uploads
-uploads/
-*.pdf
-*.docx
-
-# IDE
-.vscode/
-.idea/
-*.swp
-*.swo
-
-# OS
-.DS_Store
-Thumbs.db
+# Python__pycache__/*.py[cod]*.pyo*.egg-info/dist/build/# Environment.envbackend/.env*.env.local# Uploadsuploads/*.pdf*.docx# IDE.vscode/.idea/*.swp*.swo# OS.DS_StoreThumbs.db
+# Deploy scripts
+deploy*.py

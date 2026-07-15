@@ -1,4 +1,4 @@
-﻿/**
+/**
  * JobBoost Main JavaScript
  * Resume upload, analysis, and interview functionality
  */

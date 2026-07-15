@@ -1,4 +1,4 @@
-﻿"""
+"""
 JobBoost - AI Resume Optimizer & Interview Assistant
 启动入口
 """

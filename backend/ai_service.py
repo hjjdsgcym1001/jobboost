@@ -1,4 +1,4 @@
-﻿"""
+"""
 AI 服务模块 - 调用 OpenAI / Claude / DeepSeek API
 """
 

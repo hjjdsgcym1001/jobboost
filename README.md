@@ -1,4 +1,4 @@
-﻿---
+---
 title: JobBoost
 emoji: 🚀
 colorFrom: blue
