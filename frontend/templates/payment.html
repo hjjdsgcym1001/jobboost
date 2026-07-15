@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+{% block title %}支付{% endblock %}
+{% block content %}
+<section class="py-12">
+    <div class="max-w-lg mx-auto px-4 text-center">
+        <div class="bg-white rounded-2xl border border-gray-200 p-8">
+            <h1 class="text-2xl font-bold mb-2">{{ plan_name }}</h1>
+            <p class="text-gray-500 mb-6">请使用支付宝扫码支付</p>
+            
+            <div id="qr-container" class="mb-6">
+                <div class="w-64 h-64 mx-auto bg-gray-100 rounded-xl flex items-center justify-center">
+                    <div id="loading-spinner" class="animate-spin w-12 h-12 border-4 border-primary-500 border-t-transparent rounded-full"></div>
+                    <img id="qr-image" class="hidden w-full h-full" src="" alt="支付二维码">
+                </div>
+            </div>
+            
+            <div class="text-3xl font-bold text-primary-600 mb-2">￥{{ amount }}</div>
+            <p class="text-sm text-gray-400 mb-6">扫码后请在支付宝中完成支付</p>
+            
+            <button id="check-payment" class="w-full py-3 bg-primary-500 text-white rounded-xl hover:bg-primary-600 transition font-medium mb-3">
+                我已支付完成
+            </button>
+            <button id="pay-btn" class="w-full py-3 bg-green-500 text-white rounded-xl hover:bg-green-600 transition font-medium hidden">
+                刷新二维码重新支付
+            </button>
+            <p id="status-msg" class="text-sm text-gray-400 mt-4"></p>
+        </div>
+    </div>
+</section>
+{% endblock %}
+{% block scripts %}
+<script>
+    const params = new URLSearchParams(window.location.search);
+    const orderId = params.get('order_id');
+    const planName = params.get('plan');
+    const amount = params.get('amount');
+    
+    document.querySelector('h1').textContent = planName || '套餐';
+    document.querySelector('.text-3xl').textContent = '￥' + (amount || '0');
+    
+    // Poll payment status
+    if (orderId) {
+        const checkBtn = document.getElementById('check-payment');
+        const payBtn = document.getElementById('pay-btn');
+        const msg = document.getElementById('status-msg');
+        
+        checkBtn.onclick = async function() {
+            this.disabled = true;
+            this.textContent = '查询中...';
+            msg.textContent = '正在查询支付状态...';
+            
+            try {
+                const res = await fetch('/api/payment/query/' + orderId);
+                const data = await res.json();
+                if (data.is_paid) {
+                    msg.textContent = '? 支付成功！感谢你的购买，页面即将跳转...';
+                    msg.className = 'text-sm text-green-600 mt-4';
+                    setTimeout(() => { window.location.href = '/'; }, 2000);
+                } else {
+                    msg.textContent = '? 支付处理中，请确认已完成扫码付款';
+                    msg.className = 'text-sm text-orange-500 mt-4';
+                }
+            } catch (e) {
+                msg.textContent = '查询失败，请重试';
+            }
+            this.disabled = false;
+            this.textContent = '我已支付完成';
+        };
+        
+        // Auto check every 5 seconds
+        setInterval(checkBtn.onclick, 5000);
+    }
+</script>
+{% endblock %}

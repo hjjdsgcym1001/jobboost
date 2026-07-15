@@ -25,6 +25,7 @@ load_dotenv()
 from .models import ResumeAnalysisRequest, InterviewFeedback, InterviewQuestion
 from .resume_parser import parse_resume
 from .ai_service import AIService
+from .payment import router as payment_router
 
 # ─── Logging ───
 logging.basicConfig(level=logging.INFO)
@@ -252,6 +253,10 @@ async def templates_page():
 async def interview_page():
     return render("interview.html")
 
+
+@app.get("/payment", response_class=HTMLResponse)
+async def payment_page():
+    return render("payment.html")
 @app.get("/pricing", response_class=HTMLResponse)
 async def pricing_page():
     return render("pricing.html")
@@ -260,7 +265,9 @@ async def pricing_page():
 # ─── Static Files ───
 static_dir = BASE_DIR / "frontend" / "static"
 if static_dir.exists():
-    app.mount("/static", StaticFiles(directory=str(static_dir)), name="static")
+    app.include_router(payment_router)
+
+app.mount("/static", StaticFiles(directory=str(static_dir)), name="static")
 
 
 # ─── Run ───
