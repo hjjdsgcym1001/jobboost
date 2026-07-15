@@ -11,3 +11,5 @@ add_*.py
 Thumbs.db
 .idea/
 .vscode/
+*.pyc
+backend/__pycache__/
