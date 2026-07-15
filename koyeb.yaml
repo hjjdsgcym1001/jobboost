@@ -1,0 +1,19 @@
+﻿app:
+  name: jobboost
+  regions:
+    - was
+
+services:
+  - name: web
+    type: web
+    instance_type: nano
+    instance_count: 1
+    git:
+      repository: hjjdsgcym1001/jobboost
+      branch: main
+      build:
+        docker:
+          dockerfile: Dockerfile
+    ports:
+      - port: 7860
+        protocol: http
