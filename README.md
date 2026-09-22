@@ -1,5 +1,9 @@
 ---
-title: JobBoostemoji: 🚀colorFrom: bluecolorTo: purplesdk: dockerpinned: falseapp_port: 7860
+title: JobBoostemoji: 🚀
+colorFrom: blue
+colorTo: purple
+sdk: docker
+pinned: falseapp_port: 7860
 JobBoost - AI Resume Optimizer
 AI-powered resume optimization and interview preparation tool.
 Features
