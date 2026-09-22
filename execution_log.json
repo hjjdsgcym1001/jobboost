@@ -1,0 +1,221 @@
+{
+  "generated_at": "2026-09-22T13:39:53.593439+00:00",
+  "upload": {
+    "status": "PASS",
+    "source": "jobboost-main.zip",
+    "git_history_in_snapshot": false
+  },
+  "checks": {
+    "1.2_admission": {
+      "submission_count": {
+        "value": null,
+        "threshold": 1,
+        "status": "UNAVAILABLE"
+      },
+      "code_scale": {
+        "files": 13,
+        "effective_loc": 1304,
+        "threshold": 100,
+        "status": "PASS"
+      },
+      "parseability": {
+        "parsed": 13,
+        "total": 13,
+        "rate": 1.0,
+        "threshold": 1.0,
+        "status": "PASS"
+      },
+      "readme": {
+        "exists": true,
+        "size": 2377,
+        "status": "PASS"
+      },
+      "notes": [
+        "ZIP snapshot has no .git history; commit count must be checked in the original repository."
+      ],
+      "status": "PASS"
+    },
+    "1.3_repo_quality": {
+      "status": "PASS",
+      "functional_subsystems": {
+        "health": {
+          "files_present": true,
+          "files": [
+            "backend/main.py"
+          ],
+          "signals_found": 1,
+          "signals_expected": 1,
+          "status": "PASS"
+        },
+        "resume_upload_parse": {
+          "files_present": true,
+          "files": [
+            "backend/main.py",
+            "backend/resume_parser.py",
+            "backend/models.py"
+          ],
+          "signals_found": 3,
+          "signals_expected": 3,
+          "status": "PASS"
+        },
+        "resume_ai_analysis": {
+          "files_present": true,
+          "files": [
+            "backend/main.py",
+            "backend/ai_service.py",
+            "backend/models.py"
+          ],
+          "signals_found": 3,
+          "signals_expected": 3,
+          "status": "PASS"
+        },
+        "interview": {
+          "files_present": true,
+          "files": [
+            "backend/main.py",
+            "backend/ai_service.py",
+            "backend/models.py"
+          ],
+          "signals_found": 3,
+          "signals_expected": 3,
+          "status": "PASS"
+        },
+        "templates": {
+          "files_present": true,
+          "files": [
+            "backend/main.py",
+            "backend/ai_service.py"
+          ],
+          "signals_found": 2,
+          "signals_expected": 2,
+          "status": "PASS"
+        },
+        "payment": {
+          "files_present": true,
+          "files": [
+            "backend/main.py",
+            "backend/payment.py",
+            "frontend/templates/pricing.html",
+            "frontend/templates/payment.html"
+          ],
+          "signals_found": 3,
+          "signals_expected": 3,
+          "status": "PASS"
+        }
+      },
+      "readme_code_consistency": {
+        "checks": {
+          "project_description": true,
+          "features": true,
+          "installation": true,
+          "configuration": true,
+          "run": true,
+          "architecture": true,
+          "quality": true
+        },
+        "status": "PASS"
+      },
+      "commit_message_quality": {
+        "status": "UNAVAILABLE",
+        "count": 0,
+        "good": 0,
+        "bad": 0,
+        "reasons": [
+          "No .git history in uploaded package."
+        ]
+      }
+    },
+    "1.5_milestone_quality": {
+      "status": "PASS",
+      "details": {
+        "aggregation": true,
+        "requirement_verifiability": true,
+        "code_coverage": true,
+        "split_granularity": true,
+        "status": "PASS"
+      },
+      "milestones": [
+        {
+          "id": "M1",
+          "name": "Core resume ingestion",
+          "objective": "建立 PDF/DOCX 简历上传、解析与结构化结果返回能力。",
+          "files": [
+            "backend/main.py",
+            "backend/resume_parser.py",
+            "backend/models.py"
+          ],
+          "signals": [
+            "/api/resume/upload",
+            "parse_resume",
+            "ResumeParseResult"
+          ],
+          "file_coverage": 1.0,
+          "requirement_signal_coverage": 1.0,
+          "commit_range": null,
+          "status": "PASS"
+        },
+        {
+          "id": "M2",
+          "name": "AI resume optimization",
+          "objective": "建立简历 AI 分析、ATS 评分、关键词缺口和模板格式化能力。",
+          "files": [
+            "backend/main.py",
+            "backend/ai_service.py",
+            "backend/models.py"
+          ],
+          "signals": [
+            "/api/resume/analyze",
+            "analyze_resume",
+            "TEMPLATE_PROMPTS"
+          ],
+          "file_coverage": 1.0,
+          "requirement_signal_coverage": 1.0,
+          "commit_range": null,
+          "status": "PASS"
+        },
+        {
+          "id": "M3",
+          "name": "Interview assistant",
+          "objective": "建立基于简历/职位/公司的面试生成、回答评估和会话状态能力。",
+          "files": [
+            "backend/main.py",
+            "backend/ai_service.py",
+            "backend/models.py"
+          ],
+          "signals": [
+            "/api/interview/start",
+            "/api/interview/answer",
+            "generate_interview_questions",
+            "evaluate_answer"
+          ],
+          "file_coverage": 1.0,
+          "requirement_signal_coverage": 1.0,
+          "commit_range": null,
+          "status": "PASS"
+        },
+        {
+          "id": "M4",
+          "name": "Monetization and deployment",
+          "objective": "建立套餐、学生验证、支付查询及部署配置。",
+          "files": [
+            "backend/payment.py",
+            "run.py",
+            "Dockerfile",
+            "railway.json",
+            "koyeb.yaml"
+          ],
+          "signals": [
+            "/api/payment",
+            "student_verifications",
+            "ALIPAY",
+            "PORT"
+          ],
+          "file_coverage": 1.0,
+          "requirement_signal_coverage": 1.0,
+          "commit_range": null,
+          "status": "PASS"
+        }
+      ]
+    }
+  }
+}
